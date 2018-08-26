@@ -4,6 +4,7 @@ import logging as log
 import datetime as dt
 from time import sleep
 
+a=input("Enter the max capacity")
 cascPath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascPath)
 log.basicConfig(filename='webcam.log',level=log.INFO)
@@ -29,7 +30,8 @@ while True:
         minSize=(30, 30)
     )
     print(len(faces))
-    if len(faces) > 1:
+    
+    if len(faces) > int(a):
         print("limit exceeds No entry!!!")
         pass
 
